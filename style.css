@@ -1,0 +1,157 @@
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Page ── */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #eef0f4;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* ── Calculator shell ── */
+.calculator {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.13);
+  padding: 22px;
+  width: 380px;
+}
+
+/* ── Display ── */
+.screen {
+  background: #f4f4f6;
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-bottom: 14px;
+  text-align: right;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.expression {
+  font-size: 13px;
+  color: #999;
+  font-family: 'Courier New', monospace;
+  min-height: 18px;
+  margin-bottom: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.display {
+  font-size: 32px;
+  font-weight: 500;
+  color: #1a1a1a;
+  font-family: 'Courier New', monospace;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ── Mode row (DEG / RAD / INV) ── */
+.mode-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.mode-btn {
+  flex: 1;
+  padding: 6px 0;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  background: #f4f4f6;
+  color: #666;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.mode-btn.active {
+  background: #185FA5;
+  color: #ffffff;
+  border-color: #185FA5;
+}
+
+.mode-btn:hover:not(.active) {
+  background: #e4e6ea;
+}
+
+/* ── Button grid ── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+
+/* ── Base button ── */
+.btn {
+  border: none;
+  border-radius: 10px;
+  padding: 13px 0;
+  font-size: 14px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.1s, transform 0.1s;
+}
+
+.btn:active {
+  transform: scale(0.93);
+}
+
+/* Number buttons */
+.btn.num {
+  background: #f0f0f2;
+  color: #1a1a1a;
+}
+.btn.num:hover { background: #e0e0e4; }
+
+/* Operator buttons */
+.btn.op {
+  background: #deeaf9;
+  color: #185FA5;
+  font-size: 16px;
+}
+.btn.op:hover { background: #c8dcf5; }
+
+/* Scientific buttons */
+.btn.sci {
+  background: #eeedfe;
+  color: #3C3489;
+  font-size: 12px;
+  font-weight: 500;
+}
+.btn.sci:hover { background: #dddcfa; }
+
+/* Clear button */
+.btn.clr {
+  background: #fde8e8;
+  color: #A32D2D;
+}
+.btn.clr:hover { background: #f9c8c8; }
+
+/* Equals button */
+.btn.eq {
+  background: #185FA5;
+  color: #ffffff;
+  font-size: 18px;
+}
+.btn.eq:hover { background: #0C447C; }
+
+/* Zero button spans 2 columns */
+.btn.zero {
+  grid-column: span 2;
+  text-align: left;
+  padding-left: 20px;
+}
