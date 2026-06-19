@@ -1,3 +1,4 @@
+```css
 /* ── Reset ── */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -8,14 +9,35 @@
 /* ── Page ── */
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   background: #eef0f4;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  padding: 20px;
 }
 
-/* ── Calculator shell ── */
+/* ── Header ── */
+.header-name {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.header-name h1 {
+  color: #185FA5;
+  font-size: 38px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.header-name p {
+  color: #666;
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+
+/* ── Calculator Shell ── */
 .calculator {
   background: #ffffff;
   border-radius: 20px;
@@ -58,7 +80,7 @@ body {
   white-space: nowrap;
 }
 
-/* ── Mode row (DEG / RAD / INV) ── */
+/* ── Mode Buttons ── */
 .mode-row {
   display: flex;
   gap: 8px;
@@ -80,7 +102,7 @@ body {
 
 .mode-btn.active {
   background: #185FA5;
-  color: #ffffff;
+  color: #fff;
   border-color: #185FA5;
 }
 
@@ -88,14 +110,14 @@ body {
   background: #e4e6ea;
 }
 
-/* ── Button grid ── */
+/* ── Grid ── */
 .grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 8px;
 }
 
-/* ── Base button ── */
+/* ── Buttons ── */
 .btn {
   border: none;
   border-radius: 10px;
@@ -110,48 +132,81 @@ body {
   transform: scale(0.93);
 }
 
-/* Number buttons */
+/* Number Buttons */
 .btn.num {
   background: #f0f0f2;
   color: #1a1a1a;
 }
-.btn.num:hover { background: #e0e0e4; }
 
-/* Operator buttons */
+.btn.num:hover {
+  background: #e0e0e4;
+}
+
+/* Operator Buttons */
 .btn.op {
   background: #deeaf9;
   color: #185FA5;
   font-size: 16px;
 }
-.btn.op:hover { background: #c8dcf5; }
 
-/* Scientific buttons */
+.btn.op:hover {
+  background: #c8dcf5;
+}
+
+/* Scientific Buttons */
 .btn.sci {
   background: #eeedfe;
   color: #3C3489;
   font-size: 12px;
   font-weight: 500;
 }
-.btn.sci:hover { background: #dddcfa; }
 
-/* Clear button */
+.btn.sci:hover {
+  background: #dddcfa;
+}
+
+/* Clear Button */
 .btn.clr {
   background: #fde8e8;
   color: #A32D2D;
 }
-.btn.clr:hover { background: #f9c8c8; }
 
-/* Equals button */
+.btn.clr:hover {
+  background: #f9c8c8;
+}
+
+/* Equals Button */
 .btn.eq {
   background: #185FA5;
-  color: #ffffff;
+  color: #fff;
   font-size: 18px;
 }
-.btn.eq:hover { background: #0C447C; }
 
-/* Zero button spans 2 columns */
+.btn.eq:hover {
+  background: #0C447C;
+}
+
+/* Zero Button */
 .btn.zero {
   grid-column: span 2;
   text-align: left;
   padding-left: 20px;
 }
+
+/* ── Mobile Responsive ── */
+@media (max-width: 480px) {
+
+  .header-name h1 {
+    font-size: 28px;
+  }
+
+  .calculator {
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .display {
+    font-size: 28px;
+  }
+}
+```
